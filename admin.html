@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin - Tienda del Gato</title>
+</head>
+<body>
+    <h2>Panel de Administración</h2>
+
+    <section style="text-align: center;">
+    <span><button class="button2"><strong><a href="index.html">Volver al inicio</a></strong></button></span>
+    </section>
+
+    <form id="adminForm">
+      <input type="text" id="productName" placeholder="Nombre del producto" required>
+      <input type="number" id="productPrice" placeholder="Precio" required>
+      <input type="file" id="productImageFile" accept="image/*" required>
+      <button type="submit">Agregar producto</button>
+    </form>
+    
+
+    <ul id="lista-productos-admin"></ul>
+
+    <script src="admin.js"></script>
+</body>
+</html>

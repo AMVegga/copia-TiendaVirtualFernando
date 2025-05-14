@@ -1,0 +1,495 @@
+#titulo{    
+    text-align: left;
+    font-family: sans-serif; 
+    box-shadow: 0 0 10px #007BFF;
+    transition: transform 0.2s;
+      
+}
+
+#subtitulo{
+    font-size: 30px;
+    color: white;
+    margin-top: 0;
+}
+
+#navegacion{
+    text-align: right;
+    top: -50px;
+    position: relative;
+}
+
+#email{
+    text-align: left;
+    display: block;
+    width: 250px;
+    margin-top: -110px;
+}
+
+#password{
+    text-align: left;
+    display: block;
+    width: 250px;
+}
+
+#registrar{
+    text-align: left;
+    display: block;
+    margin-left: 20px;
+   
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px;
+    background-color: black; 
+    color: black;
+    margin-top: 0;
+ 
+}
+
+h1{
+    margin-top: 0;
+    font-size: 30px;
+}
+
+h3{
+    font-size: 15px;
+}
+
+/* Encabezado */
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;  
+    top: 0;           
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+    background: #000000;
+    color: white; 
+    height: 90px;
+    padding-bottom: 10px;
+              
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Banner */
+.banner {    
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+    font-size: 24px;
+    padding-bottom: 0;
+}
+
+.naveg{
+    margin-right: 20px;
+}
+
+/* Productos */
+.productos {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    gap: 30px;
+
+}
+  
+.producto {
+    background-color: #111;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;    
+    box-shadow: 0 0 10px #007BFF;
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+    width: 200px;   /* Ancho fijo */
+    height: 200px;  /* Alto fijo */     
+    object-fit: cover; /* Recorta y ajusta la imagen */
+    
+}
+
+.producto button {
+    background-color: #000000; /* Negro */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.producto button:hover {
+    background-color: #04086b;
+}
+
+.producto-button-informacion {
+    background-color: aliceblue;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.producto-button-informacion:hover {
+    background-color: #6484f6;
+}
+
+.producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.imagen-producto {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.info {
+    max-width: 400px;
+    text-align: left;
+}
+
+.precio {
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+a.whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #04ff00;
+    transition: transform 0.2s;    
+}
+
+a.whatsapp:hover {
+    background: #0b5926;
+    transform: translateY(-3px); /* Eleva el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #88ff00;
+}
+
+.button:active {
+    transform: translateY(1px); /* Da un efecto de presión al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+a.volver {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+a.volver:hover {
+    text-decoration: underline;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .producto {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info {
+        text-align: center;
+    }
+}
+
+/* Contacto */
+.contacto {
+    background-color: #000000; /* Negro */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.pago {
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(0, 0, 0);
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin: 10px;
+    padding: 8px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #040404;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #007BFF;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    background-color: #04086b;
+    transform: translateY(-3px); /* Eleva el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.button:active {
+    transform: translateY(1px); /* Da un efecto de presión al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button2 {
+    background-color: #040404;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #007BFF;
+    transition: transform 0.2s;
+    top: -20px;
+    position: relative;
+
+}
+
+button2:hover {
+    background-color: #04086b;
+    transform: translateY(-3px); /* Eleva el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.button2:active {
+    transform: translateY(1px); /* Da un efecto de presión al hacer clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.carrito {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carrito ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.carrito ul li {
+    display: flex;
+    justify-content: space-between;
+    background: #00044b; /* Azul */
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 15px;
+}
+
+.carrito button {
+    background-color: #000000;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carrito button:hover {
+    background-color: #04086b;
+}
+
+a {
+    color: white; 
+    text-decoration: none;
+}
+
+/* Estilo de la barra de búsqueda */
+#buscador {
+    width: 300px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    top: -60px;
+    position: relative;
+   
+}
+
+#buscador2 {
+    width: 300px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    top: -20px;
+    position: relative;
+     
+}
+
+/* boton flotante de whatsapp */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+  
+.btn-whatsapp img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+  
+.btn-whatsapp img:hover {
+    transform: scale(1.1);
+}
+  
+/* Tooltip */
+.tooltip {
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 75px; /* Ajusta la posición */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    box-shadow: 0 0 10px #15ff00;
+    transition: transform 0.2s;
+
+}
+  
+/* Mostrar tooltip al pasar el mouse */
+.btn-whatsapp:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #51ff00;
+}
+
+/* Boton de whatsapp para enviar pedido y pagar */ 
+
+#whatsapp-pagar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #04ff00;
+    transition: transform 0.2s;   
+}
+
+#whatsapp-pagar:hover {
+    background: #0b5926;
+    transform: translateY(-3px); /* Eleva el botón */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #88ff00;
+}

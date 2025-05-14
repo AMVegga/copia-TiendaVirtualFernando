@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Catálogo - Tienda del Gato</title>
+</head>
+<body>
+    <h1>Catálogo de Productos</h1>
+    <div id="catalogo"></div>
+
+    <script>
+const contenedor = document.getElementById("catalogo");
+const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+productos.forEach(prod => {
+  const card = document.createElement("div");
+  card.classList.add("producto");
+  card.innerHTML = `
+    <img src="${prod.image}" alt="${prod.name}">
+    <h3>${prod.name}</h3>
+    <p>$${prod.price}</p>
+    <button>Agregar al carrito</button>
+  `;
+  contenedor.appendChild(card);
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Catalogo</title>
+    
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>     
+        <div>
+            <h1 id="titulo">LA TIENDA DEL GATO</h1>
+        </div>
+        <nav class="naveg">
+            <ul id="navegacion">
+                <button><li><a href="inicio.html">Inicio</a></li></button>
+                <button><li><a href="productoss.html">Productos</a></li></button>
+                <button><li><a href="contacto.html">Contacto</a></li></button>
+                <button><li><a href="admin.html">Administrador</a></li></button>                
+                <button><li><a href="carrito.html">🛒 Mi pedido (<span id="contador-carrito">0</span>)</a></li></button>
+            </ul>
+        </nav>
+
+        <input type="text" id="buscador" placeholder="Buscar" onkeyup="buscarProductos()">
+        <input id="email" type="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Password">
+        <button id="registrar" onclick="registrar()">Registrarse</button>
+
+    </header>
+    <main>
+
+    <!-- Banner -->
+    <section id="inicio" class="banner">        
+        <img src="./bannerprincipal.jpg" alt="banner-principal">
+    </section>
+
+    <!-- Sección de productos -->
+    <section id="productos" class="productos">
+        <h2 id="subtitulo">Ultimos Productos Agregados</h2>
+        <div class="contenedor-productos">
+            <div class="producto" data-nombre="Celular" data-id="1">
+                <a href="./inf-prod1.html"><img src="./celular.jpg" alt="Celular"></a>
+                <h3>Celular</h3>
+                <p class="precio">$25.00</p>
+                <button class="agregar-carrito" data-nombre="Celular" data-precio="25">🛒Añadir</button>
+                <a href="./inf-prod1.html">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+                
+            </div>
+            <div class="producto" data-nombre="Afilador">
+                <a href="./inf-prod2.html"><img src="./afilador.jpg" alt="Afilador"></a>
+                <h3>Afilador</h3>
+                <p class="precio">$30.00</p>
+                <button class="agregar-carrito" data-nombre="Afilador" data-precio="30">🛒Añadir</button>
+                <a href="./inf-prod2.html">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto" data-nombre="lampara">
+                <a href=""><img src="./lampara.jpg" alt="lampara"></a>
+                <h3>Lampara</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="lampara" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto" data-nombre="laptop">
+                <a href=""><img src="./laptop.jpg" alt="laptop"></a>
+                <h3>Laptop</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="laptop" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto" data-nombre="camiseta">
+                <a href=""><img src="./camiseta.jpg" alt="camiseta"></a>
+                <h3>Camiseta</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="camiseta" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+            <div class="producto">
+                <a href=""><img src="https://via.placeholder.com/150" alt="Producto 3"></a>
+                <h3>Producto 3</h3>
+                <p class="precio">$20.00</p>
+                <button class="agregar-carrito" data-nombre="Producto 3" data-precio="30">🛒Añadir</button>
+                <a href="">
+                    <button class="producto-button-informacion">Mas informacion</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="productos"></div>
+
+    </section>   
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>        
+        <button><a href="mailto:contacto@tu-marca.com">Enviar correo a contacto@tu-marca.com</a></button>
+        <div class="contacto">
+            <a href="https://wa.me/+51913541033?text=Hola,%20quiero%20comprar%20este%20producto" class="whatsapp" target="_blank">
+                <img style="width: 20px; height: 20px;" src="./whatsapp.png" alt=""> Pagar por WhatsApp
+            </a>
+        </div>
+    </section>    
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 La tienda del gato - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <a href="https://wa.me/+51913541033" target="_blank" class="btn-whatsapp">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" />
+        <span class="tooltip">Contáctanos</span>
+      </a>
+              
+        <script src="script.js"></script>  
+        <script> src="https://lfrclbqmvkdyamtqevvo.supabase.co"</script>    
+</body>
+</html>

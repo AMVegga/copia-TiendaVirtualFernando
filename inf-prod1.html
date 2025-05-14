@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="./informacion.css">
+</head>
+<body>
+
+    <header>
+        
+        <nav class="naveg">
+            <ul id="navegacion">
+                <button><li><a href="inicio.html">Inicio</a></li></button>
+                <button><li><a href="productoss.html">Productos</a></li></button>
+                <button><li><a href="contacto.html">Contacto</a></li></button>            
+                <button><li><a href="carrito.html">🛒 Mi pedido (<span id="contador-carrito">0</span>)</a></li></button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="producto">
+            <img src="./celular.jpg" alt="Imagen del Producto" class="imagen-producto">
+            <div class="info">
+                <h2>Descripcion:</h2>
+                <p class="descripcion">
+                    Esta es una descripción detallada del producto. Aquí puedes incluir información sobre sus características, materiales, ventajas y más.
+                </p>
+                <p class="precio"><strong>Precio:</strong> S/.25</p>
+
+                <br><br>
+                
+                <button class="comprar" onclick="agregarAlCarrito('Celular', 25)">🛒Añadir</button>
+                <br><br>
+
+                <a href="https://wa.me/1234567890?text=Hola,%20quiero%20comprar%20este%20producto" class="whatsapp" target="_blank">
+                    <img style="width: 20px; height: 20px;" src="./whatsapp.png" alt=""> Pedir por WhatsApp
+                </a>
+                
+                <br>
+                <a href="index.html" class="volver">← Volver a la tienda</a>
+                
+            </div>
+        </section>
+            <div>
+
+                <span><img src="./celular2.jpg" alt="celular2" class="fotos-producto"></span>
+                <span><img src="./celular3.jpg" alt="celular3" class="fotos-producto"></span>
+                <span><img src="./celular4.jpg" alt="celular4" class="fotos-producto"></span>
+
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 La tienda del gato - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

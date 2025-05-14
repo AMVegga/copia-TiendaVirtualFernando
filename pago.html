@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - La tienda del gato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        
+        <button><a href="index.html">Volver al inicio</a></button>
+        <h1>Completa tu pago</h1>
+    </header>
+
+    <main>
+
+    <section class="pago">
+        <br><br>
+        <form>
+            <label for="nombre">Nombre y apellido:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="direccion">Direccion de entrega:</label>
+            <input type="text" id="direccion" required> 
+
+            <label for="telefono">Telefono de contacto:</label>
+            <input type="text" id="telefono" required>                     
+                                    
+        </form>                
+
+    </section> 
+    <section style="text-align: center;">
+        <a href="https://wa.me/+51913541033?text=Hola,%20quiero%20comprar%20este%20producto" class="whatsapp" target="_blank">
+            <img style="width: 20px; height: 20px;" src="./whatsapp.png" alt=""> Pagar por WhatsApp
+        </a>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <a href="https://wa.me/5211234567890" target="_blank" class="btn-whatsapp">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" />
+        <span class="tooltip">Contáctanos</span>
+      </a>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 La tienda del gato - Todos los derechos reservados</p>
+    </footer>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID"></script>
+
+        <script src="script.js"></script> 
+
+
+</body>
+</html>
