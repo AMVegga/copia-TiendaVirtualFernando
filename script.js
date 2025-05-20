@@ -90,13 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Evento para agregar productos desde la tienda
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".agregar-carrito").forEach((boton) => {
-        // 🔥 Primero, eliminamos posibles eventos duplicados
-        boton.removeEventListener("click", agregarEventoAlBoton);
-        
-        // 🔥 Luego, asignamos el evento correctamente
-        boton.addEventListener("click", agregarEventoAlBoton);
-    });
+    
 });
 
 // Función que maneja la adición al carrito
@@ -159,41 +153,46 @@ function buscarProductos2() {
 
 /* funcion para enviar el pedido por whatsapp */
 
-document.getElementById("btn-whatsapp").addEventListener("click", function () {
-    const productos = document.querySelectorAll("#lista-carrito .producto");
+const btnWhatsApp = document.getElementById("btn-whatsapp");
+if (btnWhatsApp) {
+  btnWhatsApp.addEventListener("click", function () {
+    const productos = document.querySelectorAll("#lista-carrito li");
     if (productos.length === 0) {
       alert("Tu carrito está vacío.");
       return;
     }
-  
+
     let mensaje = "¡Hola! Quiero hacer este pedido:%0A";
     let total = 0;
-  
+
     productos.forEach(item => {
       const nombre = item.dataset.nombre || item.textContent.trim();
       const cantidad = item.dataset.cantidad || 1;
       const precio = parseFloat(item.dataset.precio) || 0;
       const subtotal = cantidad * precio;
       total += subtotal;
-  
+
       mensaje += `- ${nombre} x${cantidad} = $${subtotal.toFixed(2)}%0A`;
     });
-  
+
     mensaje += `%0ATotal a pagar: $${total.toFixed(2)}`;
-  
-    const numeroWhatsApp = "+51913541033";
+    const numeroWhatsApp = "+51952208427";
     const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
     window.open(url, "_blank");
   });
-  
+}
+   
+//* CARGAR PRODUCTOS *//
+
+  if (!window.client) {
   const SUPABASE_URL = "https://lfrclbqmvkdyamtqevvo.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmcmNsYnFtdmtkeWFtdHFldnZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDY3OTksImV4cCI6MjA2MjcyMjc5OX0.uAkqSKAFKiVHUfH1QyCoLqPa3fygFh4n3wO4CdjP59Q";
-
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  window.client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+}
 
   async function cargarProductos() {
-  const { data, error } = await supabase
-    .from('products')
+  const { data, error } = await client
+    .from('productos')
     .select('*');
 
   if (error) {
@@ -205,10 +204,10 @@ document.getElementById("btn-whatsapp").addEventListener("click", function () {
   data.forEach(p => {
     contenedor.innerHTML += `
       <div>
-        <img src="${p.image_url}" width="150">
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <strong>$${p.price}</strong>
+        <img src="${p.imagen_url}" width="150">
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion}</p>
+        <strong>$${p.precio}</strong>
       </div>
     `;
   });
@@ -216,20 +215,86 @@ document.getElementById("btn-whatsapp").addEventListener("click", function () {
 
 cargarProductos();
 
-async function registrar() {
-  const email = document.getElementById('email').value;
-  const pass = document.getElementById('password').value;
+//** REGISTRO DE USUARIO (INACTIVO)**//
 
-  const { data, error } = await supabase.auth.signUp({
-    email: email,
-    password: pass
+//* async function registrar() { 
+//*  const email = document.getElementById('email').value;
+//*  const pass = document.getElementById('password').value;
+
+//*  const { data, error } = await client.auth.signUp({
+//*    email: email,
+//*    password: pass
+//*  });
+
+//*  if (error) {
+//*  alert('Error: ' + error.message);
+//* } else {
+//*  alert('Revisa tu correo para confirmar');
+//*  }
+//* }
+
+  //* CARGAR CATALOGO *// 
+
+  async function cargarCatalogo() {
+    const { data, error } = await client
+      .from("productos")
+      .select('*')
+      .order('id', { ascending: false });
+
+    if (error) {
+      console.error('Error al cargar productos:', error);
+      return;
+    }
+
+    const contenedor = document.getElementById("catalogo-productos");
+    contenedor.innerHTML = "";
+
+    data.forEach(p => {
+  const div = document.createElement("div");
+  div.className = "producto";
+  div.setAttribute("data-nombre", p.nombre);
+
+  div.innerHTML = `
+    <h3>${p.nombre}</h3>
+    <img src="${p.imagen_url}" width="200"><br>
+    <p>${p.descripcion}</p>
+    <strong>$${p.precio}</strong><br>
+    <button 
+      class="agregar-carrito" 
+      data-nombre="${p.nombre}" 
+      data-precio="${p.precio}">
+      Comprar
+    </button>
+  `;
+
+  contenedor.appendChild(div);
+});
+
+const botones = contenedor.querySelectorAll(".agregar-carrito");
+  botones.forEach(boton => {
+    boton.addEventListener("click", agregarEventoAlBoton);
   });
-
-  if (error) {
-    alert('Error: ' + error.message);
-  } else {
-    alert('Revisa tu correo para confirmar');
-  }
 }
 
+  cargarCatalogo();
+
+//** INICIAR SESION (INACTIVO) **//
+
+//** document.getElementById("iniciar-sesion").addEventListener("click", async () => {
+//**  const email = document.getElementById("email").value;
+//**  const password = document.getElementById("password").value;
+
+//**  const { data, error } = await client.auth.signInWithPassword({
+//**    email,
+//**  password,
+//**  });
+
+//**  if (error) {
+//**  alert("❌ Error al iniciar sesión: " + error.message);
+//**  } else {
+//**  alert("✅ Sesión iniciada correctamente.");
+    // Redirigir al panel de administrador (si quieres)
+//** window.location.href = "admin.html";
+//**  }
+//** });
   

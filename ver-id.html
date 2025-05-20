@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ver ID de usuario</title>
+</head>
+<body>
+  <h1>Consola: Ver ID de usuario autenticado</h1>
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    const supabase = createClient(
+      'https://lfrclbqmvkdyamtqevvo.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmcmNsYnFtdmtkeWFtdHFldnZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDY3OTksImV4cCI6MjA2MjcyMjc5OX0.uAkqSKAFKiVHUfH1QyCoLqPa3fygFh4n3wO4CdjP59Q'
+    );
+
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    if (error) {
+      console.error('Error obteniendo el usuario:', error.message);
+    } else {
+      console.log('✅ ID del usuario autenticado:', user.id);
+    }
+  </script>
+</body>
+</html>
