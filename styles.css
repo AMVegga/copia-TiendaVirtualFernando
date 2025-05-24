@@ -772,3 +772,64 @@ a {
   max-width: 100%;
   border-radius: 10px;
 }
+
+/* Fuerza diseño fijo en móviles (sin reordenamientos) */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: auto;
+  }
+
+  .header-flex,
+  #navegacion,
+  nav ul,
+  .producto,
+  .info,
+  .catalogo-grid {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .catalogo-grid .producto {
+    min-width: 250px !important;
+    width: 30% !important;
+  }
+
+  #buscador {
+    max-width: 300px !important;
+    width: 100% !important;
+    position: static !important;
+    margin: 10px auto !important;
+  }
+
+  nav ul li {
+    display: inline !important;
+    margin: 0 15px !important;
+  }
+
+  .botones-contacto {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .btn-instagram,
+  .whatsapp {
+    width: auto !important;
+  }
+
+  .form-grid {
+    flex-direction: column !important;
+  }
+
+  .form-actions {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .carrito ul li {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+}
