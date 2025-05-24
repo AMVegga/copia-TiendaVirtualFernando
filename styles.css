@@ -131,6 +131,7 @@ nav ul li a {
 .productos {
     text-align: center;
     padding: 50px 20px;
+    position: relative;
 }
 
 .contenedor-productos {
@@ -582,7 +583,7 @@ a {
   #buscador {
     width: 90%;
     top: 10px;
-    position: static;
+    position: relative;
     margin-top: 10px;
   }
 }
