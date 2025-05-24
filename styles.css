@@ -4,6 +4,8 @@
     box-shadow: 0 0 10px #007BFF;
     transition: transform 0.2s;
     margin: 0;
+    font-size: 24px !important;
+    white-space: nowrap !important;
       
 }
 
@@ -24,8 +26,10 @@
 
 #navegacion {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
     gap: 10px;
     margin-top: 10px;
     padding-right: 20px;
@@ -104,14 +108,37 @@ header {
               
 }
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 90px !important;
+    padding: 10px 20px !important;
+  }
+  }
+
+  .header-flex {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+
+   .header-flex > div,
+  .naveg {
+    flex: 0 0 auto !important;
+  }
+
 nav ul {
     list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -470,18 +497,10 @@ a {
 
 /* Estilo de la barra de búsqueda */
 #buscador {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 10px auto;
-    display: block;
-    position: center;
-    right: 10px;
-    top: 100%;
-    z-index: 999;
+     position: absolute !important;
+    right: 20px !important;
+    top: 100px !important;
+    width: 250px !important;
 }
 
 @media (max-width: 768px) {
