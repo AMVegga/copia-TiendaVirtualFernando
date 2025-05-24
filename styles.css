@@ -8,6 +8,8 @@
 }
 
 .header-flex {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,6 +63,7 @@
 }
 
 body {
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -86,7 +89,8 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed;  
+    position: fixed;
+    min-height: 120px;  
     top: 0;           
     left: 0;
     width: 100%; 
@@ -95,6 +99,8 @@ header {
     color: white; 
     height: 90px;
     padding-bottom: 10px;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
               
 }
 
@@ -472,6 +478,10 @@ a {
     font-size: 16px;
     margin: 10px auto;
     display: block;
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    z-index: 999;
 }
 
 @media (max-width: 768px) {
@@ -589,6 +599,8 @@ a {
 }
 
 .nav-btn {
+    min-width: 100px; /* o lo que necesites */
+    text-align: center;
     background-color: #000000;
     color: white;
     padding: 10px 15px;
