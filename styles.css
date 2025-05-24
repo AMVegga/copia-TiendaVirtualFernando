@@ -470,26 +470,25 @@ a {
 
 /* Estilo de la barra de búsqueda */
 #buscador {
-    width: 100%;
-    max-width: 300px;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 10px auto;
-    display: block;
-    position: center;
-    right: 10px;
-    top: 100%;
-    z-index: 999;
+  width: 300px;
+  max-width: 90%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: block;
+  margin: 15px auto;
 }
 
 @media (max-width: 768px) {
   #buscador {
-    max-width: 90%;
-    font-size: 14px;
+    width: 90% !important;
+    display: block !important;
+    margin: 15px auto !important;
+    position: static !important;
   }
 }
+
 
 #buscador2 {
     width: 300px;
@@ -819,5 +818,21 @@ a {
     right: 20px !important;
     top: 100px !important;
     width: 250px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogo-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+  .catalogo-grid .producto {
+    flex: 0 1 calc(50% - 20px) !important; /* 2 columnas */
+    min-width: 180px !important;
+    max-width: 220px !important;
+    box-sizing: border-box !important;
   }
 }
