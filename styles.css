@@ -3,7 +3,15 @@
     font-family: sans-serif; 
     box-shadow: 0 0 10px #007BFF;
     transition: transform 0.2s;
+    margin: 0;
       
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #subtitulo{
@@ -12,10 +20,24 @@
     margin-top: 0;
 }
 
-#navegacion{
-    text-align: right;
-    top: -50px;
-    position: relative;
+#navegacion {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-right: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@media (max-width: 768px) {
+  #navegacion {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
 }
 
 #email{
@@ -136,12 +158,12 @@ nav ul li a {
     box-shadow: 0 0 15px #00bfff;
 }
 
-.producto img {
-    width: 100%;
+.producto img {    
     border-radius: 10px;
-    width: 200px;   /* Ancho fijo */
-    height: 200px;  /* Alto fijo */     
+    width: 100%;   
+    height: auto;       
     object-fit: cover; /* Recorta y ajusta la imagen */
+    max-width: 200px;
     
 }
 
@@ -441,14 +463,21 @@ a {
 
 /* Estilo de la barra de búsqueda */
 #buscador {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 8px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    top: -60px;
-    position: relative;
-   
+    margin: 10px auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+  #buscador {
+    max-width: 90%;
+    font-size: 14px;
+  }
 }
 
 #buscador2 {
@@ -534,4 +563,199 @@ a {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Sombra */
     transform: scale(1.05);
     box-shadow: 0 0 15px #88ff00;
+}
+
+/** AGREGADO **/
+
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    display: block;
+  }
+
+  #buscador {
+    width: 90%;
+    top: 10px;
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+.nav-btn {
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px #007BFF;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #04086b;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.contacto-encabezado {
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  border-bottom: 1px solid #333;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #007bff;
+  transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+.info-contacto {
+  padding-top: 120px;
+}
+
+.botones-contacto {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-instagram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #E1306C;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #E1306C;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-instagram img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-instagram:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff4fa6;
+}
+
+.admin-header {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.btn-volver {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px #007bff;
+  transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+.admin-main {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.form-section {
+  background: #111;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #007bff;
+  margin-bottom: 40px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-grid input,
+.form-grid textarea {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.productos-lista h2 {
+  color: white;
+}
+
+.productos-lista .catalogo-grid > div {
+  background: #000;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #007bff;
+  color: white;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.catalogo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.catalogo-grid img {
+  max-width: 100%;
+  border-radius: 10px;
 }

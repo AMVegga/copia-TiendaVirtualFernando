@@ -2,55 +2,68 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Gestión de Productos</title>
+  <title>Panel de Administración</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
   <script>
-    var password = prompt("Introduce la contraseña:");
-    if (password !== "fernando2025") {
+    if (prompt("Introduce la contraseña:") !== "fer") {
       alert("Acceso denegado");
-      window.location.href = "index.html"; // redirige si falla
+      window.location.href = "inicio.html";
     }
   </script>
-  <link rel="stylesheet" href="stylesadmin.css">  
 </head>
 <body>
-    
-   <header> 
-  <h1 id="titulo">Agregar / Editar Producto</h1>
-  <span><button class="button2"><strong><a href="index.html">Volver al inicio</a></strong></button></span>
-    </header>
-  <form id="form-producto">
-    <input type="hidden" id="producto-id">
-    <hr>
-    <br><br>
-    <input type="text" id="nombre" placeholder="Nombre del producto" required><br><br>
 
-    <textarea id="descripcion" placeholder="Descripcion del producto" class="textarea"></textarea><br><br>
+  <header class="admin-header">
+    <h1>Panel de Gestión</h1>
+    <a href="inicio.html" class="btn-volver">← Volver al inicio</a>
+  </header>
 
-    <input type="number" id="precio" placeholder="Precio" step="0.01" required><br><br>
+  <main class="admin-main">
 
-    <input type="file" id="imagen" style="color: white;" placeholder="Imagen del producto" accept="image/*"><br><br>
+    <section class="form-section">
+      <h2>Agregar o Editar Producto</h2>
+      <form id="form-producto" class="form-grid">
+        <input type="hidden" id="producto-id" />
 
-    <button type="submit">Guardar</button>
-    <button type="button" id="cancelar" style="display:none;">Cancelar edición</button>
-  </form>
+        <input type="text" id="nombre" placeholder="Nombre del producto" required />
+        <textarea id="descripcion" placeholder="Descripción" class="textarea"></textarea>
+        <input type="number" id="precio" placeholder="Precio" step="0.01" required />
+        <input type="file" id="imagen" accept="image/*" />
 
-  <p id="resultado"></p>
+        <div class="form-actions">
+          <button type="submit">Guardar</button>
+          <button type="button" id="cancelar" style="display: none;">Cancelar</button>
+        </div>
+      </form>
+      <p id="resultado"></p>
+    </section>
 
-  <hr>
-  <h2>Lista de Productos</h2>
-  <div id="productos"></div>
-    
-  <script>
-    const client = supabase.createClient(
-      "https://lfrclbqmvkdyamtqevvo.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmcmNsYnFtdmtkeWFtdHFldnZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDY3OTksImV4cCI6MjA2MjcyMjc5OX0.uAkqSKAFKiVHUfH1QyCoLqPa3fygFh4n3wO4CdjP59Q"
+    <section class="productos-lista">
+      <h2>Lista de Productos</h2>
+      <div id="productos" class="catalogo-grid"></div>
+    </section>
+
+  </main>
+
+   <!-- LÓGICA -->
+  <script type="module"> 
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    const supabase = createClient(
+      'https://lfrclbqmvkdyamtqevvo.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmcmNsYnFtdmtkeWFtdHFldnZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNDY3OTksImV4cCI6MjA2MjcyMjc5OX0.uAkqSKAFKiVHUfH1QyCoLqPa3fygFh4n3wO4CdjP59Q'
     );
+   
+    const client = supabase;
 
+    // 📦 Variables de DOM
     const form = document.getElementById('form-producto');
     const resultado = document.getElementById('resultado');
     const productosDiv = document.getElementById('productos');
     const cancelarBtn = document.getElementById('cancelar');
 
+    // 📥 Cargar productos
     async function cargarProductos() {
       const { data, error } = await client
         .from('productos')
@@ -64,6 +77,7 @@
       }
     }
 
+    // 🧾 Mostrar lista
     function mostrarProductos(lista) {
       productosDiv.innerHTML = '';
       lista.forEach(producto => {
@@ -80,6 +94,7 @@
       });
     }
 
+    // ✏️ Editar producto
     window.editarProducto = async function(id) {
       const { data } = await client
         .from('productos')
@@ -94,6 +109,7 @@
       cancelarBtn.style.display = 'inline';
     }
 
+    // 🗑 Eliminar producto
     window.eliminarProducto = async function(id) {
       if (!confirm("¿Seguro que quieres eliminar este producto?")) return;
 
@@ -109,6 +125,7 @@
       }
     }
 
+    // 🧹 Cancelar edición
     cancelarBtn.addEventListener('click', () => {
       form.reset();
       document.getElementById('producto-id').value = '';
@@ -116,6 +133,7 @@
       resultado.textContent = '';
     });
 
+    // 💾 Guardar producto
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -166,22 +184,17 @@
         resultado.style.color = 'green';
       } else {
         const { data, error } = await client
-  .from('productos')
-  .insert([insertData]);
+          .from('productos')
+          .insert([insertData]);
 
-  console.log("Insertando en Supabase:", insertData);
+        if (error) {
+          resultado.textContent = 'Error al agregar: ' + error.message;
+          resultado.style.color = 'red';
+          return;
+        }
 
-  if (error) {
-  console.error('❌ Error al insertar producto:', error.message);
-  resultado.textContent = 'Error al agregar: ' + error.message;
-  resultado.style.color = 'red';
-  return;
-  }
-
-  console.log('✅ Producto insertado:', data);
-  resultado.textContent = 'Producto agregado.';
-  resultado.style.color = 'green';
-
+        resultado.textContent = 'Producto agregado.';
+        resultado.style.color = 'green';
       }
 
       form.reset();
@@ -192,26 +205,6 @@
 
     cargarProductos();
   </script>
-
-<!-- 🔐 PROTECCION (INACTIVO) 
-
-  <script type="module">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
-  const supabase = createClient(
-    'https://lfrclbqmvkdyamtqevvo.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
-  );
-
-  const { data: { user } } = await supabase.auth.getUser();
-
-  if (!user) {
-    alert("Acceso restringido. Debes iniciar sesión.");
-    window.location.href = "inicio.html";
-  }
-</script> --> 
-
-  <script src="script.js"></script>
 
 </body>
 </html>

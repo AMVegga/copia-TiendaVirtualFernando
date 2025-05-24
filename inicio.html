@@ -10,29 +10,25 @@
 <body>
 
     <!-- Encabezado -->
-    <header>     
-        <div>
-            <h1 id="titulo">NANDITO STORE</h1>
-        </div>
-        <nav class="naveg">
-            <ul id="navegacion">
-                <button><li><a href="inicio.html">Inicio</a></li></button>                
-                <button><li><a href="productoss.html">Productos</a></li></button>
-                <button><li><a href="contacto.html">Contacto</a></li></button>                
-                <button><li><a href="admin3.html">Administrador</a></li></button>                
-                <button><li><a href="carrito.html">🛒 Mi pedido (<span id="contador-carrito">0</span>)</a></li></button>
-            </ul>
-        </nav>
+    <header>
+  <div class="header-flex">
+    <div>
+      <h1 id="titulo">NANDITO STORE</h1>
+    </div>
+    <nav class="naveg">
+      <ul id="navegacion">
+        <li><a class="nav-btn" href="inicio.html">Inicio</a></li>
+        <li><a class="nav-btn" href="productoss.html">Productos</a></li>
+        <li><a class="nav-btn" href="contacto.html">Contáctanos</a></li>
+        <li><a class="nav-btn" href="admin.html">Administrador</a></li>
+        <li><a class="nav-btn" href="carrito.html">🛒 Mi pedido (<span id="contador-carrito">0</span>)</a></li>
+      </ul>
+    </nav>
+  </div>
 
-        <input type="text" id="buscador" placeholder="Buscar" onkeyup="buscarProductos()">
+  <input type="text" id="buscador" placeholder="Buscar" onkeyup="buscarProductos()">
+</header>
 
-        <!-- OCULTO (INACTIVO)
-        <input id="email" type="email" placeholder="Email">
-        <input id="password" type="password" placeholder="Password">
-        <button id="registrar" onclick="registrar()">Registrarse</button>
-        <button id="iniciar-sesion">Iniciar sesión</button> -->
-
-    </header>
     <main>
 
     <!-- Banner -->
@@ -51,10 +47,15 @@
 
     <!-- Contacto -->
     <section id="contacto" class="contacto">
-        <h2>Contacto</h2>        
-        <button><a href="mailto:contacto@tu-marca.com">Enviar correo a contacto@tu-marca.com</a></button>
-        <div class="contacto">
-            <a href="https://wa.me/+51952208427?text=Hola,%20quiero%20comprar%20este%20producto" class="whatsapp" target="_blank">
+        <h2>Contacto</h2>    
+        
+        <div class="botones-contacto">        
+        <a href="https://www.instagram.com/fernandohuamaniapaza" target="_blank" class="btn-instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+          Síguenos en Instagram
+        </a> 
+
+        <a href="https://wa.me/+51952208427?text=Hola,%20quiero%20comprar%20este%20producto" class="whatsapp" target="_blank">
                 <img style="width: 20px; height: 20px;" src="./whatsapp.png" alt=""> Pagar por WhatsApp
             </a>
         </div>
