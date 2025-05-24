@@ -4,8 +4,6 @@
     box-shadow: 0 0 10px #007BFF;
     transition: transform 0.2s;
     margin: 0;
-    font-size: 24px !important;
-    white-space: nowrap !important;
       
 }
 
@@ -26,10 +24,8 @@
 
 #navegacion {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
     padding-right: 20px;
@@ -108,37 +104,14 @@ header {
               
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    height: 90px !important;
-    padding: 10px 20px !important;
-  }
-  }
-
-  .header-flex {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-  }
-
-   .header-flex > div,
-  .naveg {
-    flex: 0 0 auto !important;
-  }
-
 nav ul {
     list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -497,10 +470,18 @@ a {
 
 /* Estilo de la barra de búsqueda */
 #buscador {
-     position: absolute !important;
-    right: 20px !important;
-    top: 100px !important;
-    width: 250px !important;
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px auto;
+    display: block;
+    position: center;
+    right: 10px;
+    top: 100%;
+    z-index: 999;
 }
 
 @media (max-width: 768px) {
@@ -792,63 +773,51 @@ a {
   border-radius: 10px;
 }
 
-/* Fuerza diseño fijo en móviles (sin reordenamientos) */
 @media (max-width: 768px) {
-  body, html {
-    overflow-x: auto;
-  }
-
-  .header-flex,
-  #navegacion,
-  nav ul,
-  .producto,
-  .info,
-  .catalogo-grid {
+  header {
     flex-direction: row !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 90px !important;
+    padding: 10px 20px !important;
   }
 
-  .catalogo-grid .producto {
-    min-width: 250px !important;
-    width: 30% !important;
-  }
-
-  #buscador {
-    max-width: 300px !important;
+  .header-flex {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
     width: 100% !important;
-    position: static !important;
-    margin: 10px auto !important;
+  }
+
+  .header-flex > div,
+  .naveg {
+    flex: 0 0 auto !important;
+  }
+
+  #titulo {
+    font-size: 24px !important;
+    white-space: nowrap !important;
+  }
+
+  #navegacion {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 10px !important;
   }
 
   nav ul li {
-    display: inline !important;
-    margin: 0 15px !important;
+    display: inline-block !important;
+    margin: 0 10px !important;
   }
 
-  .botones-contacto {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 20px !important;
-  }
-
-  .btn-instagram,
-  .whatsapp {
-    width: auto !important;
-  }
-
-  .form-grid {
-    flex-direction: column !important;
-  }
-
-  .form-actions {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-  }
-
-  .carrito ul li {
-    flex-direction: row !important;
-    justify-content: space-between !important;
+  #buscador {
+    position: absolute !important;
+    right: 20px !important;
+    top: 100px !important;
+    width: 250px !important;
   }
 }
