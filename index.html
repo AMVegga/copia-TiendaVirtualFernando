@@ -8,11 +8,6 @@
     
 </head>
 <body>
-  <main>
-    <!-- Banner -->
-    <section id="inicio" class="banner">        
-        <img src="./bannerprincipal.jpg" alt="banner-principal">
-    </section>
 
     <!-- Encabezado -->
     <header>    
@@ -22,7 +17,7 @@
     </div>    
     <nav class="naveg">
       <ul id="navegacion">
-        <li><a class="nav-btn" href="inicio.html">Inicio</a></li>
+        <li><a class="nav-btn" href="index.html">Inicio</a></li>
         <li><a class="nav-btn" href="productoss.html">Productos</a></li>
         <li><a class="nav-btn" href="contacto.html">Contáctanos</a></li>
         <li><a class="nav-btn" href="admin.html">Administrador</a></li>
@@ -34,21 +29,27 @@
   <input type="text" id="buscador" placeholder="Buscar" onkeyup="buscarProductos()">
 </header>
 
+    <main>
 
-    <main>    
-    <!-- Sección de productos -->    
+    <!-- Banner -->
+    <section id="inicio" class="banner">        
+        <img src="./bannerprincipal.jpg" alt="banner-principal">
+    </section>
+
+    <!-- Sección de productos -->   
 
     <section class="productos">
         <h2 id="subtitulo">Ultimos Productos Agregados</h2>
 
         <div id="catalogo-productos" class="catalogo-grid"></div>         
 
-    </section>
-     
+    </section> 
+
     <!-- Contacto -->
     <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-         <div class="botones-contacto">        
+        <h2>Contacto</h2>    
+        
+        <div class="botones-contacto">        
         <a href="https://www.instagram.com/fernandohuamaniapaza" target="_blank" class="btn-instagram">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
           Síguenos en Instagram
@@ -58,24 +59,23 @@
                 <img style="width: 20px; height: 20px;" src="./whatsapp.png" alt=""> Pagar por WhatsApp
             </a>
         </div>
-    </section>
+    </section>    
     </main>
 
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2025 Nandito Store - Todos los derechos reservados</p>
-    </footer> 
-        
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <a href="https://wa.me/+51952208427" target="_blank" class="btn-whatsapp">
         <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" />
         <span class="tooltip">Contáctanos</span>
-      </a>         
-        
-      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-      <script src="script.js"></script>
-
+      </a>   
+       <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script src="script.js"></script>       
+               
 </body>
 </html>
