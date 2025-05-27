@@ -820,13 +820,10 @@ a {
   }
 
   .catalogo-grid .producto {
+    flex: 1 1 30%;
     flex: 0 1 calc(50% - 20px) !important; /* 2 columnas */
     min-width: 180px !important;
     max-width: 220px !important;
     box-sizing: border-box !important;
   }
-}
-
-.catalogo-grid .producto {
-  flex: 1 1 30%;
 }
