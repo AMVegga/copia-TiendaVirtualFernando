@@ -108,6 +108,7 @@ header {
   display: flex;
   gap: 15px; /* espacio entre inputs */
   flex-wrap: wrap; /* para que se acomode en móvil */
+  position: relative;
 }
 
 .fila-inputs input {
