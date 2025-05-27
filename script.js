@@ -56,7 +56,7 @@ function mostrarCarrito() {
 
     carrito.forEach((producto, index) => {
         let item = document.createElement("li");
-        item.textContent = `${producto.nombre} - ${producto.precio.toFixed(2)}`;
+        item.textContent = `${producto.nombre} - S/.${producto.precio.toFixed(2)}`;
 
         // Botón eliminar
         let botonEliminar = document.createElement("button");
@@ -172,10 +172,10 @@ if (btnWhatsApp) {
       const subtotal = cantidad * precio;
       total += subtotal;
 
-      mensaje += `- ${nombre} x${cantidad} = $${subtotal.toFixed(2)}%0A`;
+      mensaje += `- ${nombre} x${cantidad} = S/.${subtotal.toFixed(2)}%0A`;
     });
 
-    mensaje += `%0ATotal a pagar: $${total.toFixed(2)}`;
+    mensaje += `%0ATotal a pagar: S/.${total.toFixed(2)}`;
     const numeroWhatsApp = "+51952208427";
     const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
     window.open(url, "_blank");
@@ -258,7 +258,7 @@ cargarProductos();
     <h3>${p.nombre}</h3>
     <img src="${p.imagen_url}" width="200"><br>
     <p>${p.descripcion}</p>
-    <strong>$${p.precio}</strong><br>
+    <strong>S/.${p.precio}</strong><br>
     <button 
       class="agregar-carrito" 
       data-nombre="${p.nombre}" 

@@ -104,6 +104,11 @@ header {
               
 }
 
+.header-pedido {
+  height: 30px;
+  padding: 0;
+}
+
 .fila-inputs {
   display: flex;
   gap: 15px; /* espacio entre inputs */
