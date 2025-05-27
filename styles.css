@@ -213,12 +213,16 @@ nav ul li a {
 }
 
 .catalogo-grid .producto {
-  width: 30%;
-  min-width: 250px;
+  flex: 0 1 calc(33.33% - 20px);
+  min-width: 200px;
+  max-width: 300px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  padding: 10px;
+  background: #111;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
   text-align: center;
+  box-shadow: 0 0 10px #007BFF;
 }
 
 .catalogo-grid .producto img {
@@ -827,3 +831,12 @@ a {
     box-sizing: border-box !important;
   }
 }
+
+@media (max-width: 768px) {
+  .catalogo-grid .producto {
+    flex: 0 1 calc(50% - 20px);
+    min-width: 160px;
+    max-width: 220px;
+  }
+}
+
