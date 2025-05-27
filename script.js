@@ -200,7 +200,7 @@ if (btnWhatsApp) {
     return;
   }
 
-  const contenedor = document.getElementById('productos');
+  const contenedor = document.getElementById("catalogo-productos");
   data.forEach(p => {
     contenedor.innerHTML += `
       <div>

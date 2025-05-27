@@ -204,15 +204,6 @@ nav ul li a {
     background-color: #6484f6;
 }
 
-.producto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    gap: 20px;
-}
-
 .catalogo-grid {
   display: flex;
   flex-wrap: wrap;
@@ -488,7 +479,6 @@ a {
     position: static !important;
   }
 }
-
 
 #buscador2 {
     width: 300px;
@@ -835,4 +825,8 @@ a {
     max-width: 220px !important;
     box-sizing: border-box !important;
   }
+}
+
+.catalogo-grid .producto {
+  flex: 1 1 30%;
 }
