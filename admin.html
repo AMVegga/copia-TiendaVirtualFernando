@@ -15,7 +15,7 @@
 <body>
 
   <header class="admin-header">
-    <h1>Panel de Gestión</h1>
+    <h1>Gestión de productos</h1>
     <a href="index.html" class="btn-volver">← Volver al inicio</a>
   </header>
 
@@ -28,11 +28,12 @@
 
         <input type="text" id="nombre" placeholder="Nombre del producto" required />
         <textarea id="descripcion" placeholder="Descripción" class="textarea"></textarea>
+      <div class="fila-inputs">
         <input type="number" id="precio" placeholder="Precio" step="0.01" required />
         <input type="file" id="imagen" accept="image/*" />
-
+      </div>
         <div class="form-actions">
-          <button type="submit">Guardar</button>
+          <button type="submit">Guardar producto</button>
           <button type="button" id="cancelar" style="display: none;">Cancelar</button>
         </div>
       </form>

@@ -104,6 +104,17 @@ header {
               
 }
 
+.fila-inputs {
+  display: flex;
+  gap: 15px; /* espacio entre inputs */
+  flex-wrap: wrap; /* para que se acomode en móvil */
+}
+
+.fila-inputs input {
+  flex: 1;
+  min-width: 150px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -676,8 +687,9 @@ a {
   background: #000;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 0;
   border-bottom: 1px solid #333;
+  height: 40px;
 }
 
 .admin-header h1 {
