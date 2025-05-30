@@ -85,7 +85,7 @@ header {
     z-index: 1000; 
     background: #000000;
     color: white; 
-    height: 5vw;
+    height: 3vw;
     padding-bottom: 10px;
     transform: translate3d(0, 0, 0);
     will-change: transform;
