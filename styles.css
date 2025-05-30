@@ -4,7 +4,7 @@
     box-shadow: 0 0 10px #007BFF;
     transition: transform 0.2s;
     margin: 0;
-    width: 10vw;
+    width: 15vw;
       
 }
 
@@ -12,6 +12,7 @@
   transform: translate3d(0, 0, 0);
   will-change: transform;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
