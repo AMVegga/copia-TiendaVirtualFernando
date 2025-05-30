@@ -883,7 +883,7 @@ a {
 }
 
 .producto.ampliado {
-  transform: scale(3);
+  transform: scale(3.5);
   z-index: 1000;
   position: relative;
   transition: transform 0.3s ease;
