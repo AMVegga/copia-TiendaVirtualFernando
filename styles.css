@@ -1,9 +1,10 @@
 #titulo{    
-    text-align: left;
+    text-align: center;
     font-family: sans-serif; 
     box-shadow: 0 0 10px #007BFF;
     transition: transform 0.2s;
     margin: 0;
+    width: 10vw;
       
 }
 
@@ -84,7 +85,7 @@ header {
     z-index: 1000; 
     background: #000000;
     color: white; 
-    height: 10vw;
+    height: 5vw;
     padding-bottom: 10px;
     transform: translate3d(0, 0, 0);
     will-change: transform;
@@ -477,14 +478,13 @@ a {
 
 /* Estilo de la barra de búsqueda */
 #buscador {
-  width: 300px;
-  max-width: 90%;
+  width: 20vw;
+  max-width: 90vw;
   padding: 8px;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-  display: block;
-  margin: 15px auto;
+  font-size: 1rem;  
+  margin-left: 0;
 }
 
 @media (max-width: 768px) {
