@@ -278,6 +278,19 @@ const botones = contenedor.querySelectorAll(".agregar-carrito");
 
   cargarCatalogo();
 
+//* AMPLIADO DEL CATALOGO DE PRODUCTOS *//
+
+document.addEventListener('click', function(e) {
+    const producto = e.target.closest('.producto');
+    if (producto) {
+      // Si ya está ampliado, lo cerramos
+      const yaAmpliado = document.querySelector('.producto.ampliado');
+      if (yaAmpliado && yaAmpliado !== producto) {
+        yaAmpliado.classList.remove('ampliado');
+      }
+      producto.classList.toggle('ampliado');
+    }
+  });
 //** INICIAR SESION (INACTIVO) **//
 
 //** document.getElementById("iniciar-sesion").addEventListener("click", async () => {
