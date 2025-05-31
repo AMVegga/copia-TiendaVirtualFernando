@@ -289,6 +289,7 @@ document.addEventListener('click', function(e) {
         yaAmpliado.classList.remove('ampliado');
       }
       producto.classList.toggle('ampliado');
+      document.body.style.overflow = producto.classList.contains('ampliado') ? 'hidden' : 'auto';
     }
   });
 //** INICIAR SESION (INACTIVO) **//
